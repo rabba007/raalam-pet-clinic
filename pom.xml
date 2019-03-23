@@ -62,6 +62,36 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+<repositories>
+  <repository>
+    <id>central</id>
+    <url>https://artifactory-slc.oraclecorp.com//artifactory/libs-release</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  <repository>
+    <id>repo1-cache</id>
+    <url>https://artifactory-slc.oraclecorp.com//artifactory/repo1-cache</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  <repository>
+    <id>jcenter-cache</id>
+    <url>https://artifactory-slc.oraclecorp.com//artifactory/jcenter-cache</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  <repository>
+    <id>oal-libs-cache</id>
+    <url>http://artifactory-slc.oraclecorp.com/artifactory/oaa-libs-release-local</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+</repositories>
 
 	<build>
 		<plugins>
