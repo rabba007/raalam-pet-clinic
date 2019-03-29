@@ -10,10 +10,12 @@ import com.rabba007whizz.petclinic.model.Pet;
 import com.rabba007whizz.petclinic.model.PetType;
 import com.rabba007whizz.petclinic.model.Speciality;
 import com.rabba007whizz.petclinic.model.Vet;
+import com.rabba007whizz.petclinic.model.Visit;
 import com.rabba007whizz.petclinic.services.OwnerService;
 import com.rabba007whizz.petclinic.services.PetTypeService;
 import com.rabba007whizz.petclinic.services.SpecialityService;
 import com.rabba007whizz.petclinic.services.VetService;
+import com.rabba007whizz.petclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,14 +24,16 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petService,
-            SpecialityService specialityService) {
+            SpecialityService specialityService, VisitService visitService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     public void run(String... args) throws Exception {
@@ -94,6 +98,12 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners ...");
 
