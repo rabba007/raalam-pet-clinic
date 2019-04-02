@@ -10,7 +10,7 @@ import com.rabba007whizz.petclinic.services.PetTypeService;
 
 @Service
 @Profile({"default", "map"})
-public class PetTypeServiceImpl extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
     public Set<PetType> findAll() {
