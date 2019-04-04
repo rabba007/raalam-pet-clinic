@@ -10,7 +10,7 @@ import com.rabba007whizz.petclinic.services.OwnerService;
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerService ownerService;
+    private OwnerService ownerService;
 
     public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
