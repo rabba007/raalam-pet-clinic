@@ -17,8 +17,13 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "types")
+
 public class PetType extends BaseEntity {
 
     private String name;
 
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }
