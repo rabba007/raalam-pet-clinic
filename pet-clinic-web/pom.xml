@@ -97,7 +97,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<!--  <repositories>
+   <!--  <repositories>
 		<repository>
 			<id>central</id>
 			<url>https://artifactory-slc.oraclecorp.com//artifactory/libs-release</url>
