@@ -72,7 +72,7 @@ class OwnerControllerTest {
         when(ownerService.findByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1L).build()));
 
         mockMvc.perform(get("/owners")).andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:owner/1"));
+                .andExpect(view().name("redirect:/owners/1"));
     }
 
     @Test
